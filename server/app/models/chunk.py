@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING
-from sqlalchemy import ForeignKey, Integer, JSON, Text
+from sqlalchemy import ForeignKey, Integer, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
+from pgvector.sqlalchemy import VECTOR
 
 from app.core.database import Base
 
@@ -16,7 +17,7 @@ class Chunk(Base):
         nullable=False,
     )
     content: Mapped[str] = mapped_column(Text, nullable=False)
-    embedding: Mapped[list[float]] = mapped_column(JSON, nullable=False)
+    embedding: Mapped[list[float]] = mapped_column(VECTOR(1560), nullable=False)
     page_number: Mapped[int] = mapped_column(Integer, nullable=False)
 
     document: Mapped["Document"] = relationship(back_populates="chunks")
