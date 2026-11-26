@@ -8,5 +8,5 @@ class ChunkRepo:
         pass
 
     def retrieve_chunks(self, text: str, top_k: int) -> list[dict]:
-        """list of retrieved chunks should be something like {doc_name: xyz, page_number: 2, content: big string} """
+        """list of retrieved chunks from db should be something like {doc_name: xyz, page_number: 2, content: big string} """
         pass
