@@ -4,3 +4,6 @@ fastapi
 uvicorn
 python-dotenv
 alembic
+pgvector
+psycopg
+sqlalchemy[asyncio]
