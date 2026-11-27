@@ -4,8 +4,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 from sqlalchemy.engine import make_url
 
-# server/app/core/config.py -> parents[2] is server/, where .env lives
-ENV_FILE = Path(__file__).resolve().parents[2] / ".env"
+# server/app/core/config.py -> parents[1] is server/, where .env lives
+ENV_FILE = Path(__file__).resolve().parents[1] / ".env"
 load_dotenv(ENV_FILE)
 
 LLM_BASE_URL = os.getenv("LLM_BASE_URL", "")
